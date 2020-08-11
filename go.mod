@@ -8,6 +8,7 @@ require (
 	github.com/Azure/go-autorest/autorest/adal v0.8.1
 	github.com/Azure/go-autorest/autorest/azure/auth v0.4.2
 	github.com/Nerzal/gocloak/v5 v5.1.0
+	github.com/go-ldap/ldap/v3 v3.2.3
 	github.com/google/go-github/v31 v31.0.0
 	github.com/hashicorp/go-cleanhttp v0.5.1
 	github.com/openshift/api v3.9.1-0.20190924102528-32369d4db2ad+incompatible

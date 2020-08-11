@@ -96,6 +96,25 @@ type ProviderType struct {
 	// +operator-sdk:gen-csv:customresourcedefinitions.statusDescriptors.displayName="Keycloak Provider"
 	// +kubebuilder:validation:Optional
 	Keycloak *KeycloakProvider `json:"keycloak,omitempty"`
+	// LDAP represents the LDAP provider
+	// +operator-sdk:gen-csv:customresourcedefinitions.specDescriptors=true
+	// +operator-sdk:gen-csv:customresourcedefinitions.statusDescriptors.displayName="LDAP Provider"
+	// +kubebuilder:validation:Optional
+	LDAP *LDAPProvider `json:"ldap,omitempty"`
+}
+
+// LdapProvider represents integration with an LDAP source
+type LDAPProvider struct {
+	CaSecret          *SecretRef `json:"caSecret,omitempty"`
+	CredentialsSecret *SecretRef `json:"credentialsSecret"`
+	Insecure          bool       `json:"insecure,omitempty"`
+	Groups            []string   `json:"groups,omitempty"`
+	URL               string     `json:"url"`
+	Host              string     `json:"host"`
+	Port              string     `json:"port,omitempty"`
+	GroupSearchBase   string     `json:"groupsearchbase,omitempty"`
+	GroupSearchFilter string     `json:"groupsearchfilter,omitempty"`
+	Protocol          string     `json:"protocol,omitempty"`
 }
 
 // KeycloakProvider represents integration with Keycloak
